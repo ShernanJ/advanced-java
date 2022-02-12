@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Games</title>
+<link rel="stylesheet" type="text/css" 
+media="all" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<h1>View Games</h1>
+	
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Price</th>
+			<th>Genre</th>
+		</tr>
+	
+		<!-- g represents every element in mygames -->
+		<tr th:each="g : ${mygames}">
+			<td th:text="${g.id}"></td>
+			<td th:text="${g.title}"></td>
+			<td th:text="${g.price}"></td>
+			<td th:text="${g.genre}"></td>
+		</tr>
+	
+	</table>
+	<a href="/">Back to Root</a>
+	<a href="/add">Add a Game</a>
+</body>
+</html>

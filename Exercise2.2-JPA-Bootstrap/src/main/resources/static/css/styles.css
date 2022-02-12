@@ -1,0 +1,21 @@
+@charset "ISO-8859-1";
+
+.bronze {
+	background-color: #a87732;
+}
+
+.silver {
+	background-color: #c7c7c7;
+}
+
+.gold {
+	background-color: #ffcf54;
+}
+
+.platinum {
+	background-color: #dbfff3;
+}
+
+.diamond {
+	background-color: #80fbff;
+}

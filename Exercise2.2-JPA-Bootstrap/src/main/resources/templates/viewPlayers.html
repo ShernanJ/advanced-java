@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thmeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>View Players</title>
+<link rel="stylesheet" type="text/css"
+media="all" th:href="@{/css/styles.css}" />
+</head>
+<body>
+	<h1>Player Scoreboard</h1>
+	
+	<table border="1">
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Kills</th>
+			<th>Deaths</th>
+			<th>Matches</th>
+			<th>Points</th>
+		</tr>
+		
+		<tr th:each="p : ${players}" th:if="${p.points >= 1000}" class="diamond">
+			<td th:text="${p.id}"></td>
+			<td th:text="${p.name}"></td>
+			<td th:text="${p.kills}"></td>
+			<td th:text="${p.deaths}"></td>
+			<td th:text="${p.matches}"></td>
+			<td th:text="${p.points}"></td>
+		<tr th:each="p : ${players}" th:if="${p.points >= 600 && p.points <= 999}" class="platinum">
+		<td th:text="${p.id}"></td>
+			<td th:text="${p.name}"></td>
+			<td th:text="${p.kills}"></td>
+			<td th:text="${p.deaths}"></td>
+			<td th:text="${p.matches}"></td>
+			<td th:text="${p.points}"></td>
+		<tr th:each="p : ${players}" th:if="${p.points >= 300 && p.points <= 599}" class="gold">
+		<td th:text="${p.id}"></td>
+			<td th:text="${p.name}"></td>
+			<td th:text="${p.kills}"></td>
+			<td th:text="${p.deaths}"></td>
+			<td th:text="${p.matches}"></td>
+			<td th:text="${p.points}"></td>
+		<tr th:each="p : ${players}" th:if="${p.points >= 100 && p.points <= 299}" class="silver">
+		<td th:text="${p.id}"></td>
+			<td th:text="${p.name}"></td>
+			<td th:text="${p.kills}"></td>
+			<td th:text="${p.deaths}"></td>
+			<td th:text="${p.matches}"></td>
+			<td th:text="${p.points}"></td>
+		<tr th:each="p : ${players}" th:if="${p.points >= 0 && p.points <= 99}" class="bronze">
+		<td th:text="${p.id}"></td>
+			<td th:text="${p.name}"></td>
+			<td th:text="${p.kills}"></td>
+			<td th:text="${p.deaths}"></td>
+			<td th:text="${p.matches}"></td>
+			<td th:text="${p.points}"></td>
+		</tr>
+	</table>
+	
+	<ul>
+		<li><a href="/">Back to Root</a></li>
+		<li><a href="/add">Add players</a></li>
+	</ul>
+</body>
+</html>

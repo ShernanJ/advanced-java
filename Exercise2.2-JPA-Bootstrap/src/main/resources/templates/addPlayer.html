@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Add player</title>
+</head>
+<body>
+	<h1>Add New Player</h1>
+	
+	<form action="/add" method="POST" th:object="${player}">
+		
+		Name: <input type="text" th:field="*{name}"><br/>
+		Kills: <input type="number" th:field="*{kills}"><br/>
+		Deaths:<input type="number" th:field="*{deaths}"><br/>
+		Matches:<input type="number" th:field="*{matches}"><br/>
+		Points:<input type="number" step="0.1" th:field="*{points}"><br/>
+		<input type="submit" value="Add Player" />
+	</form>
+	<ul>
+		<li><a href="/">Back to Root</a></li>
+		<li><a href="/view">View Scoreboard</a></li>
+	</ul>
+</body>
+</html>
