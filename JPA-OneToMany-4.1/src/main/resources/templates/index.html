@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>JPA One To Many</h1>
+	
+	<h2>Store List</h2>
+	<div th:each="s : ${storeList}">
+		<!-- Display the store name for each store -->
+		<h3 th:text="${s.name}">Store Name</h3>
+		<!-- Table of employees for each store -->
+		<table border="1" th:if="${s.employees != null}">
+			<tr>
+				<th>Employee ID</th>
+				<th>Employee Name</th>
+			</tr>
+			<tr th:each="e : ${s.employees}">
+				<td th:text="${e.id}"></td>
+				<td th:text="${e.name}"></td>
+			</tr>
+		</table>
+	</div>
+	
+	<h2>Employee List</h2>
+	<table border="1">
+		<tr>
+			<th>Employee ID</th>
+			<th>Employee Name</th>
+			<th>Store ID</th>
+			<th>Store Name</th>
+		</tr>
+		<tr th:each="e:${employeeList}">
+			<td th:text="${e.id}"></td>
+			<td th:text="${e.name}"></td>
+			<td th:if="${e.store != null}" th:text="${e.store.id}"></td>
+			<td th:if="${e.store != null}" th:text="${e.store.name}"></td>
+		</tr>
+	</table>
+</body>
+</html>

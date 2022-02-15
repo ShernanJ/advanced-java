@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>JPA Relationships</title>
+</head>
+<body>
+	<h1>JPA Relationships</h1>
+	<table th:if="${customerList!=null and !customerList.empty}">
+		<tr>
+			<td>Name</td>
+			<td>Account Number</td>
+			<td>Account Balance</td>
+		</tr>
+		<tr th:each="c : ${customerList}">
+			<td th:text="${c.name}"></td>
+			<td th:text="${c.account.accountNumber}"></td>
+			<td th:text="${c.account.balance}"></td>
+		</tr>
+	</table>
+</body>
+</html>
