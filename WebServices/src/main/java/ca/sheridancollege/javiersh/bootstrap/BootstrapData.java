@@ -18,7 +18,11 @@ public class BootstrapData implements CommandLineRunner {
 		
 		String[] names = {"Kanye West", "Shernan Javier", "Ann", "Kim", "Sam", "Fred", "Bob", "Liz", "Sal", "Tim"};
 		for (String s : names) {
-			Student student = Student.builder().name(s).build();
+			Student student = Student.builder()
+					.name(s)
+					.grade((double)(Math.round(Math.random()*100)))
+					.build();
+			student.calculate();
 			studentRepo.save(student);
 		}
 	}

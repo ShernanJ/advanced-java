@@ -40,6 +40,7 @@ public class StudentController {
 	
 	@PostMapping(value="/students", headers= {"Content-type=application/json"})
 	public String postCollection(@RequestBody Student student) {
+		student.calculate();		
 		Student s = studentRepo.save(student);
 		//s has the id of the student
 		return s.getName() + " has been added at index " + s.getId();
@@ -61,6 +62,7 @@ public class StudentController {
 	public String putElement(@RequestBody Student student, @PathVariable Long id) {
 		String oldStudent = studentRepo.getById(id).getName();
 		student.setId(id);
+		student.calculate();
 		Student s = studentRepo.save(student);
 		return "Student named " + oldStudent + " at index " + s.getId() + " was replaced with " + s.getName();
 	}

@@ -21,4 +21,24 @@ public class Student {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	
+	private Double grade;
+	private String letterGrade;
+	
+	public void calculate() {
+		if (this.grade >= 80) {
+			this.letterGrade = "A";
+		}
+		else if (this.grade >= 70) {
+			this.letterGrade = "B";
+		}
+		else if (this.grade >= 60) {
+			this.letterGrade = "C";
+		}
+		else if (this.grade >= 50) {
+			this.letterGrade = "D";
+		} else {
+			this.letterGrade = "F";
+		}
+	}
 }

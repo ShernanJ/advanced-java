@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>View Games</h1>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Grade</th>
+			<th>Letter Grade</th>
+		</tr>
+		<tr th:each="s : ${students}">
+			<td th:text="${s.id}"></td>
+			<td th:text="${s.name}"></td>
+			<td th:text="${s.grade}"></td>
+			<td th:text="${s.letterGrade}"></td>
+			<td><a th:href="@{/edit/{id}(id=${s.id})}">EDIT</a></td>
+			<td><a th:href="@{/delete/{id}(id=${s.id})}">DELETE</a></td>
+		</tr>
+	</table>
+	<a href="/">Back to home</a>
+	<a href="/add">Add Students</a>
+</body>
+</html>
