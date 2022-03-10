@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Toony Toys Inventory</title>
+</head>
+<body>
+	<h1>Toony Toys Inventory Management</h1>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Price</th>
+			<th>Quantity</th>
+			<th>Store Name</th>
+		</tr>
+		<tr th:each="t : ${toys}">
+			<td th:text="${t.id}"></td>
+			<td th:text="${t.name}"></td>
+			<td th:text="${t.price}"></td>
+			<td th:text="${t.quantity}"></td>
+			<td th:text="${t.storeName}"></td>
+			<td><a th:href="@{/purchase/{id}(id=${t.id})}">PURCHASE</a></td>
+			<td><a th:href="@{/edit/{id}(id=${t.id})}">EDIT</a></td>
+			<td><a th:href="@{/delete/{id}(id=${t.id})}">DELETE</a></td>
+		</tr>
+	</table>
+	<a href="/add">Add Toys</a>
+</body>
+</html>
