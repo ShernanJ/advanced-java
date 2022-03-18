@@ -25,7 +25,10 @@ export class StudentListComponent implements OnInit {
           this.students = students
         },
         (err) => console.log(err)
-      )
+      );
+      this.studentService.onStudentAdded.subscribe(
+        (student: Student) => this.students.push(student)
+      );
   }
 
 }
