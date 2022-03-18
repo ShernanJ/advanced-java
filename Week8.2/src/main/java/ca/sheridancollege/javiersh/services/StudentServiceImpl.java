@@ -6,8 +6,10 @@ import org.springframework.stereotype.Service;
 
 import ca.sheridancollege.javiersh.beans.Student;
 import ca.sheridancollege.javiersh.repositories.StudentRepository;
+import lombok.AllArgsConstructor;
 
 @Service
+@AllArgsConstructor
 public class StudentServiceImpl implements StudentService {
 	
 	private StudentRepository stuRepo;

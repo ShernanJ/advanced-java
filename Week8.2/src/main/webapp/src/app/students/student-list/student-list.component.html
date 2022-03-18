@@ -1,5 +1,5 @@
 <ul class="list-group">
-  <li class="list-group-item">Jon</li>
-  <li class="list-group-item">Tod</li>
-  <li class="list-group-item">Ann</li>
+  <li class="list-group-item" *ngFor="let s of students">
+    {{s.name}}
+  </li>
 </ul>
