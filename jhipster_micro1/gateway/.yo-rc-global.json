@@ -2,7 +2,8 @@
   "generator-jhipster:7.7.0": {
     "promptValues": {
       "packageName": "ca.sheridancollege.ca",
-      "nativeLanguage": "en"
+      "nativeLanguage": "en",
+      "microservicePath": "../addressAndPhone"
     }
   }
 }
